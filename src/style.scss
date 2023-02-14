@@ -43,9 +43,13 @@
                 }
             }
 
-            // input[type~=file]{
-            //     display: none;
-            // }
+            input:focus{
+                outline: none;
+            }
+
+            input[type~=file]{
+                display: none;
+            }
 
             button{
                 background-color: #7b96ec;

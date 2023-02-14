@@ -15,7 +15,7 @@ const Register = () => {
             <img src={Add} alt="" />
             <span>Add an avatar</span>
           </label>
-          <input type="file" name="" id="image" style={{ display: "none" }} />
+          <input type="file" name="" id="image"/>
           <button type="submit">Sign up</button>
         </form>
         <p>
