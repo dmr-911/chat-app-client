@@ -9,6 +9,7 @@ import {
   Link,
   BrowserRouter,
   Routes,
+  Navigate,
 } from "react-router-dom";
 import { useData } from "./context/AuthContextProvider";
 
@@ -17,11 +18,26 @@ function App() {
 
   console.log(user);
 
+  const ProtectedRoute = ({ children }) => {
+    if (!user) {
+      return <Navigate to="/login" />;
+    }
+
+    return children;
+  };
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/">
-          <Route index element={<Home />} />
+          <Route
+            index
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
         </Route>
