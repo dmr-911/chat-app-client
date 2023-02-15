@@ -15,6 +15,8 @@ import { useData } from "./context/AuthContextProvider";
 function App() {
   const { user } = useData();
 
+  console.log(user);
+
   return (
     <BrowserRouter>
       <Routes>
