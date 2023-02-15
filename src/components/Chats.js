@@ -1,83 +1,60 @@
 import React from "react";
+import { ONLINE_IMAGE } from "../utils/data";
 
 const Chats = () => {
   return (
     <div className="chats">
       <div className="user-chat">
-        <img
-          src="https://images.pexels.com/photos/14589717/pexels-photo-14589717.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-          alt=""
-        />
+        <img src={ONLINE_IMAGE} alt="" />
         <div className="user-chat-info">
           <span>Jane</span>
           <p>Hello</p>
         </div>
       </div>
       <div className="user-chat">
-        <img
-          src="https://images.pexels.com/photos/14589717/pexels-photo-14589717.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-          alt=""
-        />
+        <img src={ONLINE_IMAGE} alt="" />
         <div className="user-chat-info">
           <span>Jane</span>
           <p>Hello</p>
         </div>
       </div>
       <div className="user-chat">
-        <img
-          src="https://images.pexels.com/photos/14589717/pexels-photo-14589717.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-          alt=""
-        />
+        <img src={ONLINE_IMAGE} alt="" />
         <div className="user-chat-info">
           <span>Jane</span>
           <p>Hello</p>
         </div>
       </div>
       <div className="user-chat">
-        <img
-          src="https://images.pexels.com/photos/14589717/pexels-photo-14589717.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-          alt=""
-        />
+        <img src={ONLINE_IMAGE} alt="" />
         <div className="user-chat-info">
           <span>Jane</span>
           <p>Hello</p>
         </div>
       </div>
       <div className="user-chat">
-        <img
-          src="https://images.pexels.com/photos/14589717/pexels-photo-14589717.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-          alt=""
-        />
+        <img src={ONLINE_IMAGE} alt="" />
         <div className="user-chat-info">
           <span>Jane</span>
           <p>Hello</p>
         </div>
       </div>
       <div className="user-chat">
-        <img
-          src="https://images.pexels.com/photos/14589717/pexels-photo-14589717.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-          alt=""
-        />
+        <img src={ONLINE_IMAGE} alt="" />
         <div className="user-chat-info">
           <span>Jane</span>
           <p>Hello</p>
         </div>
       </div>
       <div className="user-chat">
-        <img
-          src="https://images.pexels.com/photos/14589717/pexels-photo-14589717.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-          alt=""
-        />
+        <img src={ONLINE_IMAGE} alt="" />
         <div className="user-chat-info">
           <span>Jane</span>
           <p>Hello</p>
         </div>
       </div>
       <div className="user-chat">
-        <img
-          src="https://images.pexels.com/photos/14589717/pexels-photo-14589717.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-          alt=""
-        />
+        <img src={ONLINE_IMAGE} alt="" />
         <div className="user-chat-info">
           <span>Jane</span>
           <p>Hello</p>

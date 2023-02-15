@@ -1,4 +1,5 @@
 import React from "react";
+import { ONLINE_IMAGE } from "../utils/data";
 
 const Search = () => {
   return (
@@ -7,10 +8,7 @@ const Search = () => {
         <input type="text" name="" id="" placeholder="Find user" />
       </div>
       <div className="user-chat">
-        <img
-          src="https://images.pexels.com/photos/14589717/pexels-photo-14589717.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-          alt=""
-        />
+        <img src={ONLINE_IMAGE} alt="" />
         <div className="user-chat-info">
           <span>Jane</span>
         </div>
