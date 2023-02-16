@@ -8,8 +8,6 @@ import { useChatData } from "../context/ChatContext";
 
 const Chat = () => {
   const { data } = useChatData();
-
-  console.log(data);
   return (
     <div className="chat">
       <div className="chat-info">

@@ -14,7 +14,7 @@ const Chats = () => {
   useEffect(() => {
     const getChats = () => {
       const unsub = onSnapshot(doc(db, "userChats", user.uid), (doc) => {
-        // console.log("Current data: ", doc.data());
+        console.log("Current users: ", doc.data());
         setChats(doc.data());
       });
 
@@ -30,13 +30,14 @@ const Chats = () => {
     dispatch({ type: "CHANGE_USER", payload: userInfo });
   };
 
-  console.log(Object.entries(chats));
+  console.log("chats", Object.entries(chats));
 
   return (
     <div className="chats">
       {Object.entries(chats)
         ?.sort((a, b) => b[1].date - a[1].date)
         .map((chat) => {
+          console.log(chat);
           return (
             <div
               className="user-chat"

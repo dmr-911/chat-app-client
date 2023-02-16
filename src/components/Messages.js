@@ -10,15 +10,14 @@ const Messages = () => {
 
   useEffect(() => {
     const unsub = onSnapshot(doc(db, "chats", data.chatId), (doc) => {
-      doc.exists() && setMessages(doc.data().message);
+      console.log(doc.data());
+      doc.exists() && setMessages(doc.data().messages);
     });
 
     return () => {
       unsub();
     };
   }, [data.chatId]);
-
-  console.log(messages);
 
   return (
     <div className="messages">

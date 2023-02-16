@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useData } from "../context/AuthContextProvider";
 import { useChatData } from "../context/ChatContext";
 import { ONLINE_IMAGE } from "../utils/data";
@@ -6,16 +6,31 @@ import { ONLINE_IMAGE } from "../utils/data";
 const Message = ({ message }) => {
   const { user } = useData();
   const { data } = useChatData();
-  console.log(message);
+
+  const messageRef = useRef();
+
+  console.log("user message", data.user);
+  useEffect(() => {
+    messageRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [message]);
   return (
-    <div className="message owner">
+    <div
+      ref={messageRef}
+      className={`message ${message.senderId === user.uid && "owner"}`}
+    >
       <div className="message-info">
-        <img src={ONLINE_IMAGE} alt="" />
+        <img
+          src={
+            message.senderId === user.uid ? user.photoURL : data.user.photoURL
+          }
+          alt=""
+        />
         <span>Just now</span>
       </div>
       <div className="message-content">
-        <p>Hello</p>
-        <img src={ONLINE_IMAGE} alt="" />
+        <p>{message.text}</p>
+
+        <img src={message?.img} alt="" />
       </div>
     </div>
   );
