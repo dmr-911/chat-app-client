@@ -1,7 +1,12 @@
 import React from "react";
+import { useData } from "../context/AuthContextProvider";
+import { useChatData } from "../context/ChatContext";
 import { ONLINE_IMAGE } from "../utils/data";
 
-const Message = () => {
+const Message = ({ message }) => {
+  const { user } = useData();
+  const { data } = useChatData();
+  console.log(message);
   return (
     <div className="message owner">
       <div className="message-info">

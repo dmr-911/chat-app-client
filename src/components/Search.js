@@ -13,9 +13,11 @@ import {
 } from "firebase/firestore";
 import { db } from "../firebase";
 import { useData } from "../context/AuthContextProvider";
+import { useChatData } from "../context/ChatContext";
 
 const Search = () => {
   const { user } = useData();
+  const { dispatch } = useChatData();
   const [username, setUsername] = useState("");
   const [searchedUser, setSearchedUser] = useState(null);
   const [err, setErr] = useState(false);
@@ -30,7 +32,7 @@ const Search = () => {
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
+        // console.log(doc.id, " => ", doc.data());
         setSearchedUser(doc.data());
       });
     } catch (err) {
@@ -44,6 +46,8 @@ const Search = () => {
   };
 
   const handleSelect = async () => {
+    console.log("user selected");
+    dispatch({ type: "CHANGE_USER", payload: searchedUser });
     // check whether the group(chats in firestore) exists, if not create
     const combinedId =
       user.uid > searchedUser.uid
@@ -55,7 +59,7 @@ const Search = () => {
 
       if (!res.exists()) {
         // create chat in chat collection
-        await setDoc(doc(db, "chats", combinedId), { messsages: [] });
+        await setDoc(doc(db, "chats", combinedId), { messages: [] });
 
         // create user chat
         await updateDoc(doc(db, "userChats", user.uid), {
@@ -78,9 +82,8 @@ const Search = () => {
         });
       }
     } catch (err) {}
-    setSearchedUser(null);
-    setUsername("");
-    // create user chat
+    // setSearchedUser(null);
+    // setUsername("");
   };
 
   return (
