@@ -39,27 +39,6 @@ const Chats = () => {
           <p>Hello</p>
         </div>
       </div>
-      <div className="user-chat">
-        <img src={ONLINE_IMAGE} alt="" />
-        <div className="user-chat-info">
-          <span>Jane</span>
-          <p>Hello</p>
-        </div>
-      </div>
-      <div className="user-chat">
-        <img src={ONLINE_IMAGE} alt="" />
-        <div className="user-chat-info">
-          <span>Jane</span>
-          <p>Hello</p>
-        </div>
-      </div>
-      <div className="user-chat">
-        <img src={ONLINE_IMAGE} alt="" />
-        <div className="user-chat-info">
-          <span>Jane</span>
-          <p>Hello</p>
-        </div>
-      </div>
     </div>
   );
 };
